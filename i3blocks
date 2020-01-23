@@ -1,0 +1,92 @@
+separator_block_width=25
+
+# [bandwidth]
+# label=
+# command=~/.config/i3/scripts/i3blocks-contrib/bandwidth2/bandwidth2 -w 307200:30720 -c 512000:51200
+# interval=persist
+# #min_width=xxxxxxxxxxxxxxxxxx
+# markup=pango
+# color=#00DFFF
+
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in/?format=+%c+%t+%w+%m+%o'
+interval=3600
+color=#A4C2F4
+
+# Query my default IP address only on startup
+# [ip]
+# command=hostname -i | awk '{ print "IP:" $1 }'
+# interval=once
+# color=#91E78B
+
+[disk-root]
+label= 
+command=~/.config/i3/scripts/disk /
+interval=60
+color=#4182FF
+
+[cpu]
+label=
+command=~/.config/i3/scripts/cpu_usage
+interval=5
+color=#4182FF
+
+[memory]
+label= 
+command=~/.config/i3/scripts/memory
+interval=15
+color=#00DFFF
+
+[swap]
+label=Swap:
+command=~/.config/i3/scripts/memory swap
+interval=30
+color=#d12233
+
+
+[battery]
+command=~/.config/i3/scripts/battery
+markup=pango
+interval=30
+color=#4182FF
+
+#[load]
+#label=     
+#command=~/.config/i3/scripts/load_average
+#interval=10
+#color=#BD93F9
+
+# [brightness]
+# label=
+# command=~/.config/i3/scripts/brightness
+# interval=1
+# signal=10
+# color=#00DFFF
+
+[volume]
+label= 
+command=~/.config/i3/scripts/volume
+interval=1
+signal=10
+color=#4182FF
+
+
+[spotify-toogle]
+full_text=p
+command=playerctl play-pause
+color=#81b71a
+
+[spotify]
+label=
+full_text=
+command=playerctl metadata --format '{{artist}} - {{album}}, {{title}}'
+interval=1
+color=#81b71a
+
+[time]
+# command-date " %a %m-%d-%y %l:%M:%S %p"
+label=
+command=date '+%a %d %b %R:%S %p'
+interval=1
+color=#00DFFF
